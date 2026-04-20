@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup Demo - Rebrandly Conversion Tracking</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="setup-demo.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#4f46e5"/><path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        MetricFlow
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="signup.html" class="btn btn-primary">Start Free Trial</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="hero" style="padding: 48px 0 32px;">
+    <div class="container">
+      <h1>Conversion Tracking <span>Setup Demo</span></h1>
+      <p>See how easy it is to install Rebrandly Conversion Tracking on your website and start measuring what matters.</p>
+    </div>
+  </section>
+
+  <!-- Stepper -->
+  <section class="section" style="padding-top: 32px;">
+    <div class="container">
+
+      <!-- Step Indicators -->
+      <div class="stepper-nav">
+        <button class="step-indicator active" data-step="1">
+          <span class="step-number">1</span>
+          <span class="step-label">Enable Tracking</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-indicator" data-step="2">
+          <span class="step-number">2</span>
+          <span class="step-label">Install Snippet</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-indicator" data-step="3">
+          <span class="step-number">3</span>
+          <span class="step-label">Create Events</span>
+        </button>
+        <div class="step-connector"></div>
+        <button class="step-indicator" data-step="4">
+          <span class="step-number">4</span>
+          <span class="step-label">Verify & Test</span>
+        </button>
+      </div>
+
+      <!-- Step Panels -->
+      <div class="step-panels">
+
+        <!-- ============ STEP 1: Enable Tracking ============ -->
+        <div class="step-panel active" data-step="1">
+          <div class="panel-header">
+            <h2>Enable Conversion Tracking on Your Links</h2>
+            <p>Toggle tracking on for individual links or set it as the default for your entire workspace.</p>
+          </div>
+
+          <div class="demo-split">
+            <!-- Left: Link settings mockup -->
+            <div class="demo-card">
+              <div class="demo-card-header">
+                <span class="demo-dot red"></span>
+                <span class="demo-dot yellow"></span>
+                <span class="demo-dot green"></span>
+                <span class="demo-card-title">Rebrandly &mdash; Edit Link</span>
+              </div>
+              <div class="demo-card-body">
+                <div class="mock-field">
+                  <label>Branded Link</label>
+                  <div class="mock-input">
+                    <span class="mock-domain">rebrand.ly</span>
+                    <span class="mock-separator">/</span>
+                    <span>metricflow-demo</span>
+                  </div>
+                </div>
+                <div class="mock-field">
+                  <label>Destination URL</label>
+                  <div class="mock-input"><span class="mock-url">https://karlissaablay.github.io/rebrandly-ct-demo/</span></div>
+                </div>
+                <div class="mock-divider"></div>
+                <div class="mock-field">
+                  <label>Conversion Tracking</label>
+                  <div class="toggle-row">
+                    <button class="toggle-switch" id="tracking-toggle">
+                      <span class="toggle-knob"></span>
+                    </button>
+                    <span class="toggle-label" id="tracking-toggle-label">Disabled</span>
+                  </div>
+                  <p class="mock-help" id="tracking-help" style="display:none;">When enabled, a <code>?rbly_click_id=</code> parameter will be appended to the destination URL on redirect.</p>
+                </div>
+                <div class="mock-field" id="attribution-field" style="display:none;">
+                  <label>Attribution Window</label>
+                  <select class="mock-select">
+                    <option>7 days</option>
+                    <option>14 days</option>
+                    <option selected>30 days (default)</option>
+                    <option>60 days</option>
+                    <option>90 days</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Explanation -->
+            <div class="demo-info">
+              <h3>How it works</h3>
+              <div class="info-steps">
+                <div class="info-step">
+                  <div class="info-step-num">1</div>
+                  <div>
+                    <strong>Toggle tracking ON</strong>
+                    <p>Enable conversion tracking for any link in your Rebrandly dashboard. Try clicking the toggle.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">2</div>
+                  <div>
+                    <strong>Click ID is appended automatically</strong>
+                    <p>When someone clicks your branded link, Rebrandly appends <code>?rbly_click_id=abc123</code> to the destination URL.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">3</div>
+                  <div>
+                    <strong>Set attribution window</strong>
+                    <p>Choose how long after a click a conversion can be attributed. Default is 30 days.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-primary" onclick="goToStep(2)">Next: Install Snippet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STEP 2: Install Snippet ============ -->
+        <div class="step-panel" data-step="2">
+          <div class="panel-header">
+            <h2>Install the Tracking Snippet</h2>
+            <p>Add one line of code to your website's header. Works with any CMS or static site.</p>
+          </div>
+
+          <div class="demo-split">
+            <!-- Left: CMS-style editor -->
+            <div class="demo-card wide">
+              <div class="demo-card-header">
+                <span class="demo-dot red"></span>
+                <span class="demo-dot yellow"></span>
+                <span class="demo-dot green"></span>
+                <span class="demo-card-title">Website Settings &mdash; Header Scripts</span>
+              </div>
+              <div class="demo-card-body">
+                <div class="cms-tabs">
+                  <button class="cms-tab active">Header Code Injection</button>
+                  <button class="cms-tab">Footer Code Injection</button>
+                </div>
+                <p class="cms-description">Paste scripts or code snippets that should appear in the <code>&lt;head&gt;</code> section of every page on your site.</p>
+                <div class="code-editor" id="snippet-editor">
+                  <div class="code-lines" id="code-lines">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                  </div>
+                  <textarea id="snippet-textarea" rows="3" spellcheck="false" placeholder="Paste your tracking snippet here..."></textarea>
+                </div>
+                <div class="snippet-source">
+                  <div class="snippet-source-header">
+                    <span>Your Rebrandly snippet</span>
+                    <button class="btn-copy" id="copy-snippet-btn">Copy</button>
+                  </div>
+                  <code class="snippet-code" id="snippet-to-copy">&lt;script src="https://cdn.test.rebrandly.com/sdk/v1/rbly.min.js" data-api-key="433200b2fd6141da82f1bd3d49b8dce8"&gt;&lt;/script&gt;</code>
+                </div>
+                <div class="editor-actions">
+                  <button class="btn btn-primary" id="save-snippet-btn" disabled>Save Changes</button>
+                  <span class="save-status" id="save-status"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Explanation -->
+            <div class="demo-info">
+              <h3>Just like WordPress or Squarespace</h3>
+              <p class="info-desc">Most website platforms have a "Header Code Injection" section in their settings. This is where you paste the Rebrandly tracking snippet.</p>
+              <div class="platform-examples">
+                <div class="platform-tag">WordPress</div>
+                <div class="platform-tag">Squarespace</div>
+                <div class="platform-tag">Webflow</div>
+                <div class="platform-tag">Shopify</div>
+                <div class="platform-tag">Wix</div>
+                <div class="platform-tag">Ghost</div>
+                <div class="platform-tag">Custom HTML</div>
+              </div>
+              <div class="info-callout">
+                <strong>Try it:</strong> Copy the snippet below the editor and paste it into the code editor on the left. Then click "Save Changes" to continue.
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+                <button class="btn btn-primary" onclick="goToStep(3)">Next: Create Events</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STEP 3: Create Events ============ -->
+        <div class="step-panel" data-step="3">
+          <div class="panel-header">
+            <h2>Create Conversion Events</h2>
+            <p>Define the events you want to track &mdash; signups, purchases, downloads, or any custom action.</p>
+          </div>
+
+          <div class="demo-split">
+            <!-- Left: Event builder -->
+            <div class="demo-card wide">
+              <div class="demo-card-header">
+                <span class="demo-dot red"></span>
+                <span class="demo-dot yellow"></span>
+                <span class="demo-dot green"></span>
+                <span class="demo-card-title">Conversion Events</span>
+              </div>
+              <div class="demo-card-body">
+                <!-- Existing events list -->
+                <div class="events-list" id="events-list">
+                  <div class="event-item default">
+                    <div class="event-icon">&#128065;</div>
+                    <div class="event-details">
+                      <span class="event-name">page_view</span>
+                      <span class="event-badge auto">Automatic</span>
+                    </div>
+                    <span class="event-desc">Tracked automatically by the SDK on every page load</span>
+                  </div>
+                </div>
+
+                <!-- Add event form -->
+                <div class="add-event-form" id="add-event-form">
+                  <h4>Add a Conversion Event</h4>
+                  <div class="event-form-grid">
+                    <div class="form-group">
+                      <label for="event-name-input">Event Name</label>
+                      <input type="text" id="event-name-input" placeholder="e.g. signup, purchase, download">
+                    </div>
+                    <div class="form-group">
+                      <label for="event-revenue-input">Revenue Value (optional)</label>
+                      <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="event-revenue-input" placeholder="0.00" step="0.01">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="event-currency-input">Currency</label>
+                      <select id="event-currency-input">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Custom Properties (optional)</label>
+                    <div class="properties-list" id="properties-list">
+                      <div class="property-row">
+                        <input type="text" class="prop-key" placeholder="Key (e.g. plan)">
+                        <input type="text" class="prop-value" placeholder="Value (e.g. professional)">
+                        <button class="prop-remove" title="Remove">&times;</button>
+                      </div>
+                    </div>
+                    <button class="btn-add-property" id="add-property-btn">+ Add Property</button>
+                  </div>
+                  <button class="btn btn-primary" id="add-event-btn">Add Event</button>
+                </div>
+
+                <!-- Generated code preview -->
+                <div class="code-preview" id="code-preview" style="display: none;">
+                  <h4>Generated Tracking Code</h4>
+                  <div class="code-block">
+                    <pre><code id="generated-code"></code></pre>
+                    <button class="btn-copy code-copy-btn" id="copy-code-btn">Copy</button>
+                  </div>
+                  <p class="code-hint">Add this code to fire on the relevant page or user action (e.g., form submit handler, thank-you page load).</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="demo-info">
+              <h3>What to track</h3>
+              <div class="info-steps">
+                <div class="info-step">
+                  <div class="info-step-num" style="background:#d1fae5; color:#059669;">&#10003;</div>
+                  <div>
+                    <strong>Page Views</strong>
+                    <p>Tracked automatically. No code needed.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">+</div>
+                  <div>
+                    <strong>Signups</strong>
+                    <p>Fire when a user completes your registration form.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">+</div>
+                  <div>
+                    <strong>Purchases</strong>
+                    <p>Fire on your thank-you/confirmation page with revenue value.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">+</div>
+                  <div>
+                    <strong>Any Custom Action</strong>
+                    <p>Downloads, demo requests, contact form submissions &mdash; anything meaningful.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info-callout">
+                <strong>Try it:</strong> Add a "signup" event, then a "purchase" event with a $79 revenue value. Watch the code generate in real time.
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+                <button class="btn btn-primary" onclick="goToStep(4)">Next: Verify & Test</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ STEP 4: Verify & Test ============ -->
+        <div class="step-panel" data-step="4">
+          <div class="panel-header">
+            <h2>Verify & Test Your Setup</h2>
+            <p>Confirm the SDK is installed and events are firing correctly.</p>
+          </div>
+
+          <div class="demo-split">
+            <!-- Left: Verification UI -->
+            <div class="demo-card wide">
+              <div class="demo-card-header">
+                <span class="demo-dot red"></span>
+                <span class="demo-dot yellow"></span>
+                <span class="demo-dot green"></span>
+                <span class="demo-card-title">Conversion Tracking &mdash; Setup Verification</span>
+              </div>
+              <div class="demo-card-body">
+                <div class="verify-domain-input">
+                  <label>Your website domain</label>
+                  <div class="verify-input-row">
+                    <input type="text" id="verify-domain" value="karlissaablay.github.io/rebrandly-ct-demo" placeholder="example.com">
+                    <button class="btn btn-primary" id="verify-btn">Verify Setup</button>
+                  </div>
+                </div>
+
+                <div class="verify-results" id="verify-results" style="display:none;">
+                  <div class="verify-item" id="verify-sdk">
+                    <div class="verify-spinner"></div>
+                    <div>
+                      <strong>SDK Installation</strong>
+                      <p>Checking for rbly.min.js in page header...</p>
+                    </div>
+                  </div>
+                  <div class="verify-item" id="verify-api">
+                    <div class="verify-spinner"></div>
+                    <div>
+                      <strong>API Key</strong>
+                      <p>Validating API key configuration...</p>
+                    </div>
+                  </div>
+                  <div class="verify-item" id="verify-pageview">
+                    <div class="verify-spinner"></div>
+                    <div>
+                      <strong>Page View Tracking</strong>
+                      <p>Testing page_view event delivery...</p>
+                    </div>
+                  </div>
+                  <div class="verify-item" id="verify-events">
+                    <div class="verify-spinner"></div>
+                    <div>
+                      <strong>Custom Events</strong>
+                      <p>Checking registered conversion events...</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="verify-summary" id="verify-summary" style="display:none;">
+                  <div class="verify-success-icon">&#10003;</div>
+                  <h3>Setup Complete!</h3>
+                  <p>Your conversion tracking is properly configured. Events will appear in your Rebrandly analytics dashboard within minutes.</p>
+                  <div class="verify-event-summary" id="verify-event-summary"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="demo-info">
+              <h3>What we check</h3>
+              <div class="info-steps">
+                <div class="info-step">
+                  <div class="info-step-num">1</div>
+                  <div>
+                    <strong>SDK presence</strong>
+                    <p>Confirms the tracking snippet is in your page header.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">2</div>
+                  <div>
+                    <strong>API key validity</strong>
+                    <p>Ensures your workspace API key is active and authorized.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">3</div>
+                  <div>
+                    <strong>Event delivery</strong>
+                    <p>Sends a test page_view to confirm the full pipeline works.</p>
+                  </div>
+                </div>
+                <div class="info-step">
+                  <div class="info-step-num">4</div>
+                  <div>
+                    <strong>Event registration</strong>
+                    <p>Verifies your custom events are configured and ready.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info-callout">
+                <strong>Try it:</strong> Click "Verify Setup" to run the automated check. This simulates what happens in the Rebrandly dashboard when you verify your installation.
+              </div>
+              <div class="step-actions">
+                <button class="btn btn-secondary" onclick="goToStep(3)">Back</button>
+                <a href="index.html" class="btn btn-primary">View Demo Site</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /step-panels -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 48px;">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 MetricFlow. This is a demo site for Rebrandly Conversion Tracking testing.
+      </div>
+    </div>
+  </footer>
+
+  <script src="setup-demo.js"></script>
+</body>
+</html>
