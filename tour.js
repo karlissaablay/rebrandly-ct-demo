@@ -38,7 +38,7 @@
         target: 'a[href="signup.html"].btn-primary.btn-large',
         title: "CTA Click Event",
         body: "When a visitor clicks this CTA, we fire a <code>cta_click</code> custom event that captures which button was clicked and from which page. This helps measure intent before the actual conversion." +
-          '<div class="tour-code-block"><code>trackConversion({\n  eventName: \'cta_click\',\n  properties: {\n    ctaText: \'Start Free Trial\',\n    sourcePage: \'index.html\'\n  }\n});</code></div>',
+          '<div class="tour-code-block"><code>rbly.track(\"cta_click\", {\n  ctaText: \"Start Free Trial\",\n  sourcePage: \"index.html\"\n});</code></div>',
         position: "top",
         stepLabel: "Custom Events",
       },
@@ -57,7 +57,7 @@
         target: ".pricing-card.featured",
         title: "High-Intent Page View",
         body: "When a visitor reaches the pricing page, we fire a <code>pricing_viewed</code> event — a high-intent signal that the visitor is evaluating plans. This is tracked as a custom conversion event on top of the automatic page view." +
-          '<div class="tour-code-block"><code>trackConversion({\n  eventName: \'pricing_viewed\',\n  properties: {\n    referrer: document.referrer\n  }\n});</code></div>',
+          '<div class="tour-code-block"><code>rbly.track(\"pricing_viewed\", {\n  referrer: document.referrer\n});</code></div>',
         position: "left",
         stepLabel: "Custom Events",
       },
@@ -76,7 +76,7 @@
         target: "#signup-form",
         title: "Signup Conversion Event",
         body: "When the visitor submits this form, we fire a <code>signup</code> conversion event. It captures the selected plan, email, and company — linking this conversion back to the original Rebrandly link click." +
-          '<div class="tour-code-block"><code>trackConversion({\n  eventName: \'signup\',\n  properties: {\n    plan: \'professional\',\n    email: \'jane@company.com\',\n    company: \'Acme Corp\'\n  }\n});</code></div>',
+          '<div class="tour-code-block"><code>rbly.track(\"signup\", {\n  plan: \"professional\",\n  email: \"jane@company.com\",\n  company: \"Acme Corp\"\n});</code></div>',
         position: "right",
         stepLabel: "Custom Events",
       },
@@ -102,7 +102,7 @@
         target: ".success-icon",
         title: "Purchase Event with Revenue",
         body: "This is the money moment. On page load, we fire a <code>purchase</code> event with the revenue value attached. This is what powers the revenue attribution in the Rebrandly analytics dashboard." +
-          '<div class="tour-code-block"><code>trackConversion({\n  eventName: \'purchase\',\n  revenue: 79.00,\n  currency: \'USD\',\n  properties: {\n    plan: \'professional\',\n    billingCycle: \'monthly\'\n  }\n});</code></div>',
+          '<div class="tour-code-block"><code>rbly.track(\"purchase\", {\n  revenue: 79.00,\n  currency: \"USD\",\n  plan: \"professional\",\n  billingCycle: \"monthly\"\n});</code></div>',
         position: "bottom",
         stepLabel: "Custom Events",
       },
