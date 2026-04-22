@@ -20,16 +20,12 @@
     enterprise: 299.0,
   };
 
-  // Helper: call rbly.track(eventName, properties)
-  // SDK signature: rbly.track(name: string, props: object)
-  // Revenue and currency go inside the properties object.
+  // SDK signature: rbly.track(eventName, properties, value, currency)
   function track(eventName, revenue, currency, properties) {
     if (typeof rbly !== "undefined" && typeof rbly.track === "function") {
-      var props = properties ? Object.assign({}, properties) : {};
-      if (revenue != null) props.revenue = revenue;
-      if (currency) props.currency = currency;
-      rbly.track(eventName, props);
-      console.log("[Rebrandly CT] Sent:", eventName, props);
+      var props = properties || {};
+      rbly.track(eventName, props, revenue || undefined, currency || undefined);
+      console.log("[Rebrandly CT] Sent:", eventName, props, "value:", revenue, "currency:", currency);
     } else {
       console.warn("[Rebrandly CT] SDK not loaded, skipping:", eventName);
     }
